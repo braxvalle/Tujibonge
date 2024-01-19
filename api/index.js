@@ -6,6 +6,10 @@ import authRoutes from "./routes/auth.route.js";
 
 dotenv.config();
 
+const app = express();
+
+app.use(express.json());
+
 mongoose
   .connect(process.env.MONGO)
   .then(() => {
@@ -14,8 +18,6 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-
-const app = express();
 
 app.listen(3000, () => {
   console.log("server is running on port 3000.....");
