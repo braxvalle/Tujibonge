@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -7,3 +9,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#root {
+}
+
+:root {
+  --text: #0a0106;
+  --background: #fef2f8;
+  --primary: #e82378;
+  --secondary: #85f2a9;
+  --accent: #5ac7ee;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--background);
+}
+
+header {
+  position: sticky;
+  top: 30px;
+  border-radius: 1rem;
+  margin: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  z-index: 20;
+  filter: drop-shadow(0px 1px 6px #000000b9);
+}
+
+/* sign up form */
+.main-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80dvh;
+}
+
+.form-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  border-radius: 1rem;
+  flex-wrap: wrap;
+}
