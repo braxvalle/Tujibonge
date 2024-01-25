@@ -46,6 +46,7 @@ header {
   justify-content: center;
   align-items: center;
   height: 80dvh;
+  width: 100%;
 }
 
 .form-items {
@@ -54,5 +55,41 @@ header {
   justify-content: center;
   gap: 3rem;
   border-radius: 1rem;
-  flex-wrap: wrap;
+}
+
+.left-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+}
+
+.right-form {
+  max-width: 500px;
+  padding: 2rem;
+  width: 100%;
+}
+
+.form-inputs input{
+  background-color: var(--background);
+  padding: 0 1rem;
+  height: 40px;
+  border-radius: 0.5rem;
+  border: 1px solid var(--primary);
+  outline: 0;
+  &:focus {
+    border: 2px solid grey;
+  }
+}
+
+.form-inputs label {
+  font-weight: 500;
+}
+
+.right-form h2{
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
