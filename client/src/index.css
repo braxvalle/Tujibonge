@@ -10,19 +10,16 @@
 @tailwind components;
 @tailwind utilities;
 
-#root {
-}
-
 :root {
   --text: #0a0106;
   --background: #fef2f8;
-  --primary: #e82378;
+  --primary: #be123c;
   --secondary: #85f2a9;
   --accent: #5ac7ee;
 }
 
 body {
-  font-family: "League Spartan", sans-serif;
+  font-family: "League Spartan";
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
@@ -93,3 +90,50 @@ header {
   font-size: 2rem;
   margin-bottom: 2rem;
 }
+
+.btn {
+  background-color: #5ac6ee56;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  width: 10em;
+  border-radius: 1rem;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+btn:active {
+  color: white;
+  box-shadow: 0 0.2rem #dfd9d9;
+  transform: translateY(0.2rem);
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--primary);
+  color: white;
+  text-shadow: 0 0.1rem #bcb4b4;
+}
+
+btn:disabled {
+  cursor: auto;
+  color: grey;
+}
+
+
+
+@media (max-width: 768px) {
+  .btn-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-items {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .main-item {
+    height: auto;
+  }
+}
+
