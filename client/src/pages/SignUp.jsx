@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import logo from '../assets/Tujibonge LOGO.png'
+import { useNavigate } from 'react-router-dom'
 
 const SignUp = () => {
   const [formData, setFormData] = useState({});
   const [erroMessage, setErrorMessage] = useState(null);
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -13,7 +15,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     if(!formData.username || !formData.email || !formData.password) {
-      return setErrorMessage(alert('Please fill all the fields as required'))
+      return setErrorMessage()
     }
     try {
       const res = await fetch('/api/auth/signup', {
@@ -22,7 +24,15 @@ const SignUp = () => {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-    } catch (error) {}
+      if (data.success === false) {
+        return alert('user already exist');
+      }
+      if(res.ok) {
+        navigate('/login');
+      }
+    } catch (error) {
+      setErrorMessage(error.message);
+    }
   }
 
   return (
@@ -48,11 +58,12 @@ const SignUp = () => {
               <input type="password" id='password' placeholder='Enter password' required onChange={handleChange} />
             </div>
             <div className="btn-div">
-              <button className='btn' type='submit'>Sign Up</button>
+              <button className='btn' type='submit' disabled={loading}>Sign Up</button>
             </div>
           </form>
+          <p>{erroMessage}</p>
+        <p className='pt-5 font-medium'>Already have an Account <span className='text-red-700 underline'><a href="/login">Login here</a></span></p>
         </div>
-
       </div>
     </div>
   )

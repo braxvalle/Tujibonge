@@ -135,5 +135,10 @@ btn:disabled {
   .main-item {
     height: auto;
   }
+  header {
+    margin: 0;
+    border-radius: 0;
+    top: 0;
+  }
 }
 
