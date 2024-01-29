@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Community from "./pages/Community";
 import Blogs from "./pages/Blogs";
 
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/community" element={<Community />} />
         <Route path="/blogs" element={<Blogs />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
