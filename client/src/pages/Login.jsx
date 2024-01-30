@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
-import logo from '../assets/Tujibonge LOGO.png'
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from 'react';
+import logo from '../assets/Tujibonge LOGO.png';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { logInStart, logInSuccess, logInFailure } from '../redux/user/userSlice';
 
 const Login = () => {
   const [formData, setFormData] = useState({});
-  const [erroMessage, setErrorMessage] = useState(null);
+  const { loading, error: erroMessage} = useSelector(state => state.user);
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setFormData({...formData, [e.target.id]: e.target.value.trim() });
@@ -15,9 +17,10 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     if(!formData.email || !formData.password) {
-      return setErrorMessage()
+      return dispatch(logInFailure('Please fill all the fileds'));
     }
     try {
+      dispatch(logInStart());
       const res = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -25,13 +28,13 @@ const Login = () => {
       });
       const data = await res.json();
       if (data.success === false) {
-        return alert('Please Enter the correct details');
+        dispatch(logInFailure(data.message));
       }
       if(res.ok) {
         navigate('/');
       }
     } catch (error) {
-      setErrorMessage(error.message);
+      dispatch(logInFailure(error.message));
     }
   }
 
@@ -57,8 +60,8 @@ const Login = () => {
               <button className='btn' type='submit' disabled={loading}>Login</button>
             </div>
           </form>
-          <p>{erroMessage}</p>
         <p className='pt-5 font-medium'>Don't have an Account? <span className='text-red-700 underline'><a href="/signup">Register here</a></span></p>
+          <p className='error'>{erroMessage}</p>
         </div>
       </div>
     </div>

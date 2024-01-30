@@ -121,6 +121,16 @@ btn:disabled {
   color: grey;
 }
 
+.error {
+  color: var(--primary);
+  background-color: #ff1f5734;
+  margin-top: 0.7rem;
+  text-align: center;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+}
+
 /* footer section */
 footer {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
