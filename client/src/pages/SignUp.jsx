@@ -61,7 +61,9 @@ const SignUp = () => {
               <button className='btn' type='submit' disabled={loading}>Sign Up</button>
             </div>
           </form>
-          <p>{erroMessage}</p>
+          <div className='error'>
+            <p>{erroMessage}</p>
+          </div>
         <p className='pt-5 font-medium'>Already have an Account <span className='text-red-700 underline'><a href="/login">Login here</a></span></p>
         </div>
       </div>
