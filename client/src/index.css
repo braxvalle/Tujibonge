@@ -122,19 +122,18 @@ btn:disabled {
 }
 
 /* google btn */
-/* From uiverse.io by @alshahwan */
-/* From uiverse.io by @alshahwan */
+
 .google-btn {
   background-color: #fff;
   border: 1px solid #0077b5;
-  padding: 5px;
+  padding: auto;
   position: relative;
-  width: auto;
+  width: 11rem;
   height: 2em;
+  margin-top: 2rem;
   transition: 0.5s;
-  font-size: 17px;
+  font-size: 1rem;
   border-radius: 0.4em;
-  margin-top: 1.5rem;
 }
 
 .google-btn p {
@@ -142,7 +141,6 @@ btn:disabled {
   top: 0.4em;
   left: 1.2em;
   margin: 0;
-  padding: 0;
   transition: .5s;
   color: #0077b5;
 }
@@ -151,7 +149,6 @@ btn:disabled {
   position: absolute;
   top: 0.45em;
   right: 0.5em;
-  margin: 0;
   padding: 0;
   opacity: 0;
   transition: 0.5s;
@@ -187,7 +184,7 @@ btn:disabled {
 footer {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   padding: 3rem;
-  border: 1px solid var(--text);
+  /* border: 1px solid var(--text); */
   margin: 1rem;
 }
 
@@ -202,7 +199,7 @@ footer {
 hr {
   height: 3px;
   width: 70%;
-  background-color: #0a0106;
+  background-color: #0a010617;
 }
 
 .copyright {
