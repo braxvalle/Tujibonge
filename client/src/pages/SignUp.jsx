@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import logo from '../assets/Tujibonge LOGO.png'
 import { useNavigate } from 'react-router-dom'
+import OAuth from '../components/OAuth';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({});
@@ -60,6 +61,7 @@ const SignUp = () => {
             <div className="btn-div">
               <button className='btn' type='submit' disabled={loading}>Sign Up</button>
             </div>
+            <OAuth />
           </form>
           <div className='error'>
             <p>{erroMessage}</p>

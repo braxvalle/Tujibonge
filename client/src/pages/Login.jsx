@@ -3,6 +3,7 @@ import logo from '../assets/Tujibonge LOGO.png';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logInStart, logInSuccess, logInFailure } from '../redux/user/userSlice';
+import OAuth from '../components/OAuth';
 
 const Login = () => {
   const [formData, setFormData] = useState({});
@@ -59,6 +60,7 @@ const Login = () => {
             <div className="btn-div">
               <button className='btn' type='submit' disabled={loading}>Login</button>
             </div>
+            <OAuth />
           </form>
         <p className='pt-5 font-medium'>Don't have an Account? <span className='text-red-700 underline'><a href="/signup">Register here</a></span></p>
           <p className='error'>{erroMessage}</p>

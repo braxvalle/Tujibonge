@@ -121,6 +121,58 @@ btn:disabled {
   color: grey;
 }
 
+/* google btn */
+/* From uiverse.io by @alshahwan */
+/* From uiverse.io by @alshahwan */
+.google-btn {
+  background-color: #fff;
+  border: 1px solid #0077b5;
+  padding: 5px;
+  position: relative;
+  width: auto;
+  height: 2em;
+  transition: 0.5s;
+  font-size: 17px;
+  border-radius: 0.4em;
+  margin-top: 1.5rem;
+}
+
+.google-btn p {
+  position: absolute;
+  top: 0.4em;
+  left: 1.2em;
+  margin: 0;
+  padding: 0;
+  transition: .5s;
+  color: #0077b5;
+}
+
+.google-btn svg {
+  position: absolute;
+  top: 0.45em;
+  right: 0.5em;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transition: 0.5s;
+  height: 1em;
+  fill: #fff
+}
+
+.google-btn:hover p {
+  left: 0.6em;
+  color: #fff
+}
+
+.google-btn:hover svg {
+  opacity: 1;
+}
+
+.google-btn:hover {
+  background-color: #0077b5;
+}
+
+
 .error {
   color: var(--primary);
   background-color: #ff1f5734;
